@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #1A1A1A;
+  --cream: #F5F1EA;
+  --bone: #FFFFFF;
+  --forest: #2A3A2E;
+  --brass: #B8956A;
+  --stone: #8B8680;
+  --rust: #A04E2C;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* Accessible focus rings — brass, never invisible */
+  *:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hairline brass divider */
+  .divider-brass {
+    height: 1px;
+    background-color: var(--brass);
+    opacity: 0.35;
+  }
+
+  /* Editorial italic emphasis */
+  .em-italic {
+    font-style: italic;
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+}
+
+/* Paw print arrow float animation */
+@keyframes arrowFloat {
+  0%, 100% { translate: 0 0px; }
+  50%       { translate: 0 -7px; }
+}
+
+/* Scroll cue animation override for desktop */
+@keyframes scrollDown {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6) translateY(-4px); }
+  50% { opacity: 1; transform: scaleY(1) translateY(4px); }
+}
+
+/* Video container aspect on mobile when used as background */
+.hero-video-mobile {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"
+     width="100%" aria-hidden="true"
+     style="display:block;overflow:visible;max-width:900px;margin:0 auto">
+  <defs>
+    <!-- Paw print: toes face UP at angle=0. Palm center at (0,10). -->
+    <g id="paw">
+      <!-- Palm pad -->
+      <ellipse cx="0"   cy="10"  rx="20"  ry="18"/>
+      <!-- Toe pads (arc above palm) -->
+      <ellipse cx="-18" cy="-7"  rx="9.5" ry="8.5"/>
+      <ellipse cx="-6"  cy="-23" rx="9.5" ry="8.5"/>
+      <ellipse cx="6"   cy="-23" rx="9.5" ry="8.5"/>
+      <ellipse cx="18"  cy="-7"  rx="9.5" ry="8.5"/>
+    </g>
+  </defs>
+  <style>
+    @keyframes arrowFloat {
+      0%, 100% { translate: 0 0px; }
+      50%       { translate: 0 -8px; }
+    }
+  </style>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0s infinite">
+    <use href="#paw" transform="translate(88.0,368.0) rotate(-6.84) scale(0.2200)"/>
+    <use href="#paw" transform="translate(83.7,304.8) rotate(-0.92) scale(0.3100)"/>
+    <use href="#paw" transform="translate(85.6,244.5) rotate(4.37) scale(0.4000)"/>
+    <use href="#paw" transform="translate(92.3,188.4) rotate(9.17) scale(0.4900)"/>
+    <use href="#paw" transform="translate(102.5,137.6) rotate(13.68) scale(0.5800)"/>
+    <use href="#paw" transform="translate(115.0,93.5) rotate(18.19) scale(0.6700)"/>
+    <use href="#paw" transform="translate(128.6,57.2) rotate(23.20) scale(0.7600)"/>
+    <use href="#paw" transform="translate(142.0,30.0) rotate(29.98) scale(0.8500)"/>
+  </g>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0.18s infinite">
+    <use href="#paw" transform="translate(238.0,382.0) rotate(-8.28) scale(0.2400)"/>
+    <use href="#paw" transform="translate(233.6,323.3) rotate(-0.38) scale(0.3262)"/>
+    <use href="#paw" transform="translate(236.7,266.4) rotate(6.51) scale(0.4125)"/>
+    <use href="#paw" transform="translate(245.8,212.3) rotate(12.46) scale(0.4988)"/>
+    <use href="#paw" transform="translate(259.4,162.0) rotate(17.66) scale(0.5850)"/>
+    <use href="#paw" transform="translate(275.9,116.6) rotate(22.30) scale(0.6713)"/>
+    <use href="#paw" transform="translate(293.8,77.1) rotate(26.65) scale(0.7575)"/>
+    <use href="#paw" transform="translate(311.7,44.6) rotate(31.11) scale(0.8438)"/>
+    <use href="#paw" transform="translate(328.0,20.0) rotate(36.53) scale(0.9300)"/>
+  </g>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0.34s infinite">
+    <use href="#paw" transform="translate(398.0,392.0) rotate(-9.46) scale(0.2600)"/>
+    <use href="#paw" transform="translate(393.3,339.9) rotate(-1.12) scale(0.3422)"/>
+    <use href="#paw" transform="translate(395.5,288.1) rotate(5.93) scale(0.4244)"/>
+    <use href="#paw" transform="translate(403.5,237.6) rotate(11.82) scale(0.5067)"/>
+    <use href="#paw" transform="translate(415.8,189.3) rotate(16.76) scale(0.5889)"/>
+    <use href="#paw" transform="translate(431.3,144.1) rotate(20.96) scale(0.6711)"/>
+    <use href="#paw" transform="translate(448.5,103.1) rotate(24.60) scale(0.7533)"/>
+    <use href="#paw" transform="translate(466.3,67.1) rotate(27.89) scale(0.8356)"/>
+    <use href="#paw" transform="translate(483.2,37.1) rotate(31.06) scale(0.9178)"/>
+    <use href="#paw" transform="translate(498.0,14.0) rotate(34.59) scale(1.0000)"/>
+  </g>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0.50s infinite">
+    <use href="#paw" transform="translate(600.0,396.0) rotate(-1.66) scale(0.2800)"/>
+    <use href="#paw" transform="translate(599.1,354.7) rotate(-0.77) scale(0.3580)"/>
+    <use href="#paw" transform="translate(598.8,313.6) rotate(-0.07) scale(0.4360)"/>
+    <use href="#paw" transform="translate(599.0,272.9) rotate(0.44) scale(0.5140)"/>
+    <use href="#paw" transform="translate(599.4,232.8) rotate(0.76) scale(0.5920)"/>
+    <use href="#paw" transform="translate(600.0,193.2) rotate(0.88) scale(0.6700)"/>
+    <use href="#paw" transform="translate(600.6,154.5) rotate(0.79) scale(0.7480)"/>
+    <use href="#paw" transform="translate(601.0,116.7) rotate(0.48) scale(0.8260)"/>
+    <use href="#paw" transform="translate(601.2,79.9) rotate(-0.08) scale(0.9040)"/>
+    <use href="#paw" transform="translate(600.9,44.3) rotate(-0.90) scale(0.9820)"/>
+    <use href="#paw" transform="translate(600.0,10.0) rotate(-2.05) scale(1.0600)"/>
+  </g>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0.34s infinite">
+    <use href="#paw" transform="translate(802.0,392.0) rotate(9.46) scale(0.2600)"/>
+    <use href="#paw" transform="translate(806.7,339.9) rotate(1.12) scale(0.3422)"/>
+    <use href="#paw" transform="translate(804.5,288.1) rotate(-5.93) scale(0.4244)"/>
+    <use href="#paw" transform="translate(796.5,237.6) rotate(-11.82) scale(0.5067)"/>
+    <use href="#paw" transform="translate(784.2,189.3) rotate(-16.76) scale(0.5889)"/>
+    <use href="#paw" transform="translate(768.7,144.1) rotate(-20.96) scale(0.6711)"/>
+    <use href="#paw" transform="translate(751.5,103.1) rotate(-24.60) scale(0.7533)"/>
+    <use href="#paw" transform="translate(733.7,67.1) rotate(-27.89) scale(0.8356)"/>
+    <use href="#paw" transform="translate(716.8,37.1) rotate(-31.06) scale(0.9178)"/>
+    <use href="#paw" transform="translate(702.0,14.0) rotate(-34.59) scale(1.0000)"/>
+  </g>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0.18s infinite">
+    <use href="#paw" transform="translate(962.0,382.0) rotate(8.28) scale(0.2400)"/>
+    <use href="#paw" transform="translate(966.4,323.3) rotate(0.38) scale(0.3262)"/>
+    <use href="#paw" transform="translate(963.3,266.4) rotate(-6.51) scale(0.4125)"/>
+    <use href="#paw" transform="translate(954.2,212.3) rotate(-12.46) scale(0.4988)"/>
+    <use href="#paw" transform="translate(940.6,162.0) rotate(-17.66) scale(0.5850)"/>
+    <use href="#paw" transform="translate(924.1,116.6) rotate(-22.30) scale(0.6713)"/>
+    <use href="#paw" transform="translate(906.2,77.1) rotate(-26.65) scale(0.7575)"/>
+    <use href="#paw" transform="translate(888.3,44.6) rotate(-31.11) scale(0.8438)"/>
+    <use href="#paw" transform="translate(872.0,20.0) rotate(-36.53) scale(0.9300)"/>
+  </g>
+  <g fill="#D4A24C" style="animation:arrowFloat 2.2s ease-in-out 0s infinite">
+    <use href="#paw" transform="translate(1112.0,368.0) rotate(6.84) scale(0.2200)"/>
+    <use href="#paw" transform="translate(1116.3,304.8) rotate(0.92) scale(0.3100)"/>
+    <use href="#paw" transform="translate(1114.4,244.5) rotate(-4.37) scale(0.4000)"/>
+    <use href="#paw" transform="translate(1107.7,188.4) rotate(-9.17) scale(0.4900)"/>
+    <use href="#paw" transform="translate(1097.5,137.6) rotate(-13.68) scale(0.5800)"/>
+    <use href="#paw" transform="translate(1085.0,93.5) rotate(-18.19) scale(0.6700)"/>
+    <use href="#paw" transform="translate(1071.4,57.2) rotate(-23.20) scale(0.7600)"/>
+    <use href="#paw" transform="translate(1058.0,30.0) rotate(-29.98) scale(0.8500)"/>
+  </g>
+</svg>
