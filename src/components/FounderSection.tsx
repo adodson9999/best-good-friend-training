@@ -49,7 +49,7 @@ function Slideshow() {
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '520px', overflow: 'hidden', background: '#2c3b2d' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '340px', overflow: 'hidden', background: '#2c3b2d' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         ref={imgRef}
@@ -94,29 +94,29 @@ function Slideshow() {
 export default function FounderSection() {
   return (
     <section id="about" className="bg-cream overflow-hidden">
-      <div className="flex flex-col md:flex-row min-h-[600px]">
-        {/* Slideshow — full bleed to left edge, no rounded corners */}
-        <div className="relative w-full h-[520px] md:h-auto md:w-[42%] flex-shrink-0">
+      <div className="flex flex-col md:flex-row md:min-h-[600px]">
+        {/* Slideshow */}
+        <div className="relative w-full h-[340px] md:h-auto md:w-[42%] flex-shrink-0">
           <Slideshow />
         </div>
 
         {/* Content column */}
-        <div className="flex-1 flex items-center px-8 py-16 md:px-16 md:py-24 lg:px-24">
-          <div className="max-w-[560px]">
+        <div className="flex-1 flex items-center px-5 py-10 md:px-16 md:py-24 lg:px-24">
+          <div className="max-w-[560px] w-full">
             <ScrollReveal delay={0}>
-              <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-brass mb-6">
+              <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-brass mb-4 md:mb-6">
                 Meet Your Coach
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.06}>
-              <h2 className="font-display text-display-section text-ink mb-8 text-balance">
+              <h2 className="font-display text-display-section text-ink mb-5 md:mb-8 text-balance">
                 I&apos;m Genna. Your dog isn&apos;t broken, your communication is.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <p className="font-sans text-[17px] leading-[1.65] text-ink/70 mb-5">
+              <p className="font-sans text-[15px] md:text-[17px] leading-[1.65] text-ink/70 mb-4 md:mb-5">
                 Most dog owners don&apos;t have a training problem. They have a communication
                 problem. They&apos;re speaking in a language their dog doesn&apos;t understand,
                 and the dog is doing the only thing it knows how to do: improvise.
@@ -124,7 +124,7 @@ export default function FounderSection() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.13}>
-              <p className="font-sans text-[17px] leading-[1.65] text-ink/70 mb-10">
+              <p className="font-sans text-[15px] md:text-[17px] leading-[1.65] text-ink/70 mb-7 md:mb-10">
                 There&apos;s usually a moment when owners reach out, when they&apos;ve tried
                 the YouTube videos, the group class, the collar their neighbor swore by. When
                 they realize the problem isn&apos;t the dog. That moment is where we start.
@@ -133,8 +133,8 @@ export default function FounderSection() {
 
             {/* Pull quote */}
             <ScrollReveal delay={0.16}>
-              <blockquote className="border-l-[3px] border-brass pl-6 mb-10">
-                <p className="font-display italic text-[21px] md:text-[24px] leading-[1.4] text-ink">
+              <blockquote className="border-l-[3px] border-brass pl-5 md:pl-6 mb-7 md:mb-10">
+                <p className="font-display italic text-[18px] md:text-[24px] leading-[1.4] text-ink">
                   &ldquo;The bond between you and your dog isn&apos;t a nice-to-have.
                   It&apos;s the whole foundation.&rdquo;
                 </p>

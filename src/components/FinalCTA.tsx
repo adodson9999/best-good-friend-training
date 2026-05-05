@@ -5,8 +5,8 @@ const HONEYBOOK_URL =
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="bg-forest py-24 md:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section id="contact" className="bg-forest py-14 md:py-32">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="max-w-[680px]">
           <ScrollReveal delay={0}>
             <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-brass mb-7">

@@ -51,7 +51,7 @@ function Slideshow() {
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '480px', overflow: 'hidden', background: '#2c3b2d' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '300px', overflow: 'hidden', background: '#2c3b2d' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         ref={imgRef}
@@ -99,12 +99,12 @@ export default function ResetCourse() {
       <div className="max-w-[1400px] mx-auto md:grid md:grid-cols-[55%_45%]">
 
         {/* Slideshow panel — fixed height on desktop so Slideshow gets a real height */}
-        <div style={{ position: 'relative', minHeight: '480px' }} className="md:min-h-[600px]">
+        <div style={{ position: 'relative', minHeight: '300px' }} className="md:min-h-[580px]">
           <Slideshow />
         </div>
 
         {/* Content panel */}
-        <div className="flex items-center border-t md:border-t-0 md:border-l border-cream/10 px-8 py-16 md:px-16 md:py-20 lg:px-20">
+        <div className="flex items-center border-t md:border-t-0 md:border-l border-cream/10 px-5 py-10 md:px-16 md:py-20 lg:px-20">
           <div>
             <ScrollReveal delay={0}>
               <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-brass mb-6">

@@ -86,8 +86,8 @@ function FAQItem({ faq, index }: FAQItemProps) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-cream py-24 md:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section id="faq" className="bg-cream py-14 md:py-32">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex flex-col md:flex-row gap-16 md:gap-24">
           {/* Header — sticky on desktop */}
           <div className="w-full md:w-[36%] flex-shrink-0">

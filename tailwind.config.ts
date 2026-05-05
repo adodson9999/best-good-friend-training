@@ -22,8 +22,8 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-hero': ['clamp(24px,3.2vw,48px)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
-        'display-section': ['clamp(32px,4vw,56px)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
+        'display-hero': ['clamp(26px,3.2vw,48px)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+        'display-section': ['clamp(28px,4vw,56px)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
       },
       transitionTimingFunction: {
         'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',

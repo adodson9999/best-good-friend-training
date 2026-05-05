@@ -111,7 +111,7 @@ function ServiceCard({ service, delay }: CardProps) {
         style={{ backgroundColor: service.bg }}
       >
         {/* Circular image placeholder */}
-        <div className="flex justify-center pt-10 pb-6">
+        <div className="flex justify-center pt-7 pb-5 md:pt-10 md:pb-6">
           <div className="w-24 h-24 rounded-full bg-cream/60 border border-brass/20 flex items-center justify-center overflow-hidden">
             {/* Placeholder ring — swap for <Image> when photos are ready */}
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -127,7 +127,7 @@ function ServiceCard({ service, delay }: CardProps) {
         </div>
 
         {/* Body */}
-        <div className="px-8 pb-10 flex flex-col flex-1">
+        <div className="px-5 pb-7 md:px-8 md:pb-10 flex flex-col flex-1">
           {/* Category tag */}
           <p className="font-sans text-[10px] uppercase tracking-[0.16em] text-ink/50 text-center mb-3">
             {service.category}
@@ -181,12 +181,12 @@ function ServiceCard({ service, delay }: CardProps) {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="bg-cream py-24 md:py-32">
-      <div className="max-w-[1300px] mx-auto px-6 md:px-10">
+    <section id="services" className="bg-cream py-14 md:py-32">
+      <div className="max-w-[1300px] mx-auto px-5 md:px-10">
 
-        {/* Centered header — matches believeindog style */}
+        {/* Centered header */}
         <FadeUp>
-          <div className="text-center mb-14 md:mb-18">
+          <div className="text-center mb-10 md:mb-16">
             <p className="font-sans text-[11px] uppercase tracking-[0.16em] text-brass mb-4">
               Find the Right Fit
             </p>

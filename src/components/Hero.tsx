@@ -65,7 +65,7 @@ function ReviewSlideshow() {
   const review = reviews[idx]
 
   return (
-    <div className="border-t border-cream/15 pt-6 pb-2">
+    <div className="border-t border-cream/15 pt-5 pb-2">
       {/* Stars */}
       <div className="flex gap-1 mb-3">
         {[...Array(5)].map((_, i) => (
@@ -76,14 +76,8 @@ function ReviewSlideshow() {
       </div>
 
       {/* Quote */}
-      <div
-        style={{
-          opacity: visible ? 1 : 0,
-          transition: 'opacity 0.4s ease',
-          minHeight: '64px',
-        }}
-      >
-        <p className="font-display italic text-[17px] md:text-[19px] leading-[1.45] text-cream/90 mb-2">
+      <div style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease', minHeight: '64px' }}>
+        <p className="font-display italic text-[16px] md:text-[19px] leading-[1.45] text-cream/90 mb-2">
           &ldquo;{review.text}&rdquo;
         </p>
         <p className="font-sans text-[11px] uppercase tracking-[0.12em] text-brass">
@@ -92,7 +86,7 @@ function ReviewSlideshow() {
       </div>
 
       {/* Dot indicators */}
-      <div className="flex flex-wrap gap-[6px] mt-5">
+      <div className="flex flex-wrap gap-[5px] mt-4">
         {reviews.map((_, i) => (
           <button
             key={i}
@@ -102,8 +96,7 @@ function ReviewSlideshow() {
               width: i === idx ? '18px' : '6px',
               height: '6px',
               borderRadius: '9999px',
-              backgroundColor:
-                i === idx ? 'rgba(196,150,58,0.85)' : 'rgba(245,240,230,0.25)',
+              backgroundColor: i === idx ? 'rgba(196,150,58,0.85)' : 'rgba(245,240,230,0.25)',
               border: 'none',
               padding: 0,
               cursor: 'pointer',
@@ -131,10 +124,7 @@ function ServicesBar() {
   }
 
   return (
-    <div
-      ref={ref}
-      className="relative z-10 border-t border-cream/20"
-    >
+    <div ref={ref} className="relative z-10 border-t border-cream/20">
       <div className="grid grid-cols-2 md:grid-cols-4">
         {services.map((s, i) => (
           <motion.button
@@ -144,16 +134,20 @@ function ServicesBar() {
             initial={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 + i * 0.1 }}
             className={[
-              'group flex items-center justify-between px-6 py-5 md:px-8 md:py-6 text-left',
+              'group flex items-center justify-between px-4 py-4 md:px-8 md:py-6 text-left',
               'hover:bg-cream/5 transition-colors duration-200 cursor-pointer',
-              i > 0 ? 'border-l border-cream/20' : '',
-              i >= 2 ? 'border-t md:border-t-0' : '',
+              // Mobile 2-col grid: only right-column items (odd indices) get border-l
+              // Desktop 4-col grid: all except first get border-l
+              i % 2 !== 0 ? 'border-l border-cream/20' : '',
+              i > 0 && i % 2 === 0 ? 'md:border-l md:border-cream/20' : '',
+              // Bottom row on mobile gets border-t; removed on md
+              i >= 2 ? 'border-t md:border-t-0 border-cream/20' : '',
             ].join(' ')}
           >
-            <span className="font-display italic text-[clamp(15px,1.4vw,22px)] text-cream leading-tight">
+            <span className="font-display italic text-[clamp(12px,1.4vw,22px)] text-cream leading-tight">
               {s.title}
             </span>
-            <span className="ml-3 text-brass opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0">
+            <span className="ml-2 text-brass opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0 text-sm">
               →
             </span>
           </motion.button>
@@ -199,40 +193,40 @@ export default function Hero() {
         aria-hidden
         className="absolute inset-0 z-0 w-full h-full object-cover object-center"
       />
-      {/* Darkening overlays so text stays readable */}
+      {/* Darkening overlays */}
       <div className="absolute inset-0 z-0 bg-ink/50" />
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-ink/60 via-ink/30 to-ink/10" />
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-ink/60 via-transparent to-ink/20" />
 
-      {/* ── Main content — grows to fill space above services bar ── */}
+      {/* ── Main content ── */}
       <div
         className={[
           'relative z-10 flex-1',
-          'flex flex-col justify-center pb-4 pt-24 px-6',
-          'md:flex-row md:items-center md:justify-start md:pb-4 md:pt-20',
-          'md:pl-[max(56px,calc((100vw-1400px)/2+72px))] md:pr-16',
-          'gap-8 md:gap-16 lg:gap-20',
+          'flex flex-col justify-center px-5 pt-20 pb-4',
+          'md:flex-row md:items-center md:justify-start md:pt-20 md:pb-4',
+          'md:pl-[max(48px,calc((100vw-1400px)/2+64px))] md:pr-12',
+          'gap-6 md:gap-14 lg:gap-20',
         ].join(' ')}
       >
         {/* ── LEFT: Headline + CTAs ── */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-w-0">
           {/* H1 */}
           <FadeIn delay={0.05}>
-            <h1 className="font-display text-display-hero text-cream mb-4 md:mb-5">
+            <h1 className="font-display text-display-hero text-cream mb-3 md:mb-5">
               Professional Dog Training in Charlotte, NC Area
             </h1>
           </FadeIn>
 
           {/* Subhead */}
           <FadeIn delay={0.12}>
-            <p className="font-sans text-[16px] md:text-[17px] leading-[1.65] text-cream/80 max-w-[44ch] mb-6 md:mb-7">
+            <p className="font-sans text-[14px] md:text-[17px] leading-[1.65] text-cream/80 max-w-[44ch] mb-4 md:mb-6">
               Build the dog you&apos;ve always wanted through real communication, not just commands.
             </p>
           </FadeIn>
 
           {/* Credential bullets */}
           <FadeIn delay={0.18}>
-            <ul className="mb-8 md:mb-9 space-y-2">
+            <ul className="mb-6 md:mb-8 space-y-1.5 md:space-y-2">
               {[
                 'Certified Canine Coach with 10+ Years of Experience',
                 'Private 1-on-1 In-Home Coaching (Plus Virtual Support)',
@@ -240,8 +234,8 @@ export default function Hero() {
                 'Different Training for Every Dog',
                 'Serving Charlotte, Matthews, Huntersville, Davidson, Concord, NC & Surrounding Areas',
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2 font-sans text-[14px] md:text-[15px] text-cream/75 leading-[1.5]">
-                  <span className="text-brass mt-[3px] flex-shrink-0">✦</span>
+                <li key={item} className="flex items-start gap-2 font-sans text-[12px] md:text-[15px] text-cream/75 leading-[1.5]">
+                  <span className="text-brass mt-[2px] flex-shrink-0 text-[10px] md:text-[12px]">✦</span>
                   {item}
                 </li>
               ))}
@@ -250,16 +244,16 @@ export default function Hero() {
 
           {/* CTAs */}
           <FadeIn delay={0.25}>
-            <div className="flex flex-col sm:flex-row items-start gap-4">
-              {/* Button + arrows stacked, arrows centered under button */}
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+              {/* Button + arrows centered under it */}
               <div className="flex flex-col items-center">
                 <a
                   href={HONEYBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={[
-                    'inline-flex items-center gap-2 px-7 py-[14px]',
-                    'bg-brass text-ink font-sans text-[13px] tracking-[0.08em] uppercase',
+                    'inline-flex items-center gap-2 px-6 py-[12px] md:px-7 md:py-[14px]',
+                    'bg-brass text-ink font-sans text-[12px] md:text-[13px] tracking-[0.08em] uppercase',
                     'hover:bg-[#a67e57] transition-colors duration-250',
                   ].join(' ')}
                 >
@@ -273,8 +267,8 @@ export default function Hero() {
                   aria-hidden="true"
                   style={{
                     display: 'block',
-                    width: '420px',
-                    maxWidth: '100%',
+                    width: '100%',
+                    maxWidth: '380px',
                     height: 'auto',
                     marginTop: '6px',
                   }}
@@ -283,7 +277,7 @@ export default function Hero() {
               <a
                 href="#services"
                 className={[
-                  'inline-flex items-center gap-1.5 py-[14px] font-sans text-[13px] tracking-wide',
+                  'inline-flex items-center gap-1.5 py-[12px] md:py-[14px] font-sans text-[12px] md:text-[13px] tracking-wide',
                   'text-cream/90 border-b border-cream/50',
                   'hover:text-cream hover:border-cream transition-colors duration-200',
                 ].join(' ')}
@@ -292,16 +286,18 @@ export default function Hero() {
               </a>
             </div>
           </FadeIn>
-
         </div>
 
-        {/* ── RIGHT: Review slideshow ── */}
-        <FadeIn delay={0.32} className="w-full md:w-[38%] lg:w-[34%] flex-shrink-0 md:border-l md:border-cream/15 md:pl-12 lg:pl-16">
+        {/* ── RIGHT: Review slideshow — hidden on mobile to keep hero clean ── */}
+        <FadeIn
+          delay={0.32}
+          className="hidden md:block w-full md:w-[36%] lg:w-[32%] flex-shrink-0 md:border-l md:border-cream/15 md:pl-10 lg:pl-14"
+        >
           <ReviewSlideshow />
         </FadeIn>
       </div>
 
-      {/* ── Services bar — bottom of hero, visible before scrolling ── */}
+      {/* ── Services bar ── */}
       <div className="relative z-10">
         <ServicesBar />
       </div>

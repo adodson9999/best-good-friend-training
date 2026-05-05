@@ -109,8 +109,8 @@ function TestimonialCard({ t, delay }: TestimonialCardProps) {
 
 export default function Testimonials() {
   return (
-    <section id="proof" className="bg-cream py-24 md:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section id="proof" className="bg-cream py-14 md:py-32">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         {/* Header */}
         <div className="max-w-[640px] mb-14">
           <ScrollReveal>
