@@ -260,19 +260,6 @@ export default function Hero() {
                   Book Your Discovery Call
                   <span aria-hidden className="text-ink/70">→</span>
                 </a>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/six-paw-arrows.svg"
-                  alt=""
-                  aria-hidden="true"
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    maxWidth: '380px',
-                    height: 'auto',
-                    marginTop: '6px',
-                  }}
-                />
               </div>
               <a
                 href="#services"

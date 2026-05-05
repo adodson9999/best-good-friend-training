@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 410" aria-hidden="true">
+  <style>
+    @keyframes arrowFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+    .arrow { animation: arrowFloat 2.2s ease-in-out infinite; transform-origin: center; }
+  </style>
+  <g class="arrow">
+  <g transform="translate(100.0,390.0) rotate(0.00) scale(0.2000)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,358.6) rotate(0.00) scale(0.2767)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,326.8) rotate(0.00) scale(0.3533)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,294.9) rotate(0.00) scale(0.4300)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,262.9) rotate(0.00) scale(0.5067)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,230.9) rotate(0.00) scale(0.5833)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,199.1) rotate(0.00) scale(0.6600)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,167.6) rotate(0.00) scale(0.7367)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,136.4) rotate(0.00) scale(0.8133)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,105.8) rotate(0.00) scale(0.8900)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,75.8) rotate(0.00) scale(0.9667)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,46.5) rotate(0.00) scale(1.0433)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  <g transform="translate(100.0,18.0) rotate(0.00) scale(1.1200)" fill="#E89A3C"><ellipse cx="0" cy="10" rx="20" ry="18"/><ellipse cx="-18" cy="-7" rx="9.5" ry="8.5"/><ellipse cx="-6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="6" cy="-23" rx="9.5" ry="8.5"/><ellipse cx="18" cy="-7" rx="9.5" ry="8.5"/></g>
+  </g>
+</svg>

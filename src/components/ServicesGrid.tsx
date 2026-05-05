@@ -215,19 +215,6 @@ export default function ServicesGrid() {
                 Let&apos;s talk →
               </a>
             </p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/six-paw-arrows-slate.svg"
-              alt=""
-              aria-hidden="true"
-              style={{
-                display: 'block',
-                width: '420px',
-                maxWidth: '100%',
-                height: 'auto',
-                marginTop: '6px',
-              }}
-            />
           </div>
         </FadeUp>
       </div>
