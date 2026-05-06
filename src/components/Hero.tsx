@@ -123,7 +123,7 @@ export default function Hero() {
 
           {/* ══════════════ LEFT — PORTRAIT ══════════════ */}
           <div
-            className="flex-shrink-0 w-[38%] md:w-[47%]"
+            className="flex-shrink-0 w-[48%] md:w-[47%]"
             style={{
               backgroundImage: 'url(/images/genna-hero-portrait.jpg)',
               backgroundSize: 'cover',
