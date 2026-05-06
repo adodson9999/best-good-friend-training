@@ -130,7 +130,7 @@ export default function Hero() {
               backgroundPosition: 'center top',
             }}
           >
-            <div className="w-full h-full" style={{ background: 'linear-gradient(to right, transparent 55%, #486573 95%)' }} />
+            <div className="w-full h-full" style={{ background: 'linear-gradient(to right, transparent 80%, rgba(72,101,115,0.5) 100%)' }} />
           </div>
 
           {/* ══════════════ RIGHT — COPY ══════════════ */}
