@@ -191,7 +191,7 @@ export default function Hero() {
               className="flex items-center justify-center overflow-hidden px-1 py-2 md:px-4 md:py-4 text-center transition-colors duration-200 hover:bg-white/5"
               style={{ borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
             >
-              <span className="font-display italic text-white/80 whitespace-nowrap" style={{ fontSize: 'clamp(9px,1vw,16px)' }}>
+              <span className="font-display italic text-white/80 text-center leading-tight" style={{ fontSize: 'clamp(8px,1vw,16px)' }}>
                 {s.label}
               </span>
             </Link>
