@@ -1,157 +1,212 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const HONEYBOOK_URL =
   'https://www.honeybook.com/widget/best_good_friend_training_llc_296123/cf_id/6806fc7d140e43002c11e347'
 
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Reset Course', href: '#reset-course' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+// Muted sage — matches BGFT brand and the Erin Moran reference palette
+const SAGE = '#9CA68A'
+
+const serviceDropdown = [
+  { label: 'Private In-Home Coaching', href: '#private-coaching' },
+  { label: 'Puppy Foundations',        href: '#puppy-foundations' },
+  { label: 'Off-Leash Training',       href: '#off-leash' },
+  { label: 'Behavioral Tune-Ups',      href: '#behavioral-tune-ups' },
 ]
 
+const NAV_STYLE: React.CSSProperties = {
+  color: SAGE,
+  letterSpacing: '0.18em',
+  fontWeight: 400,
+  fontSize: '11px',
+}
+
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 72)
-    window.addEventListener('scroll', handler, { passive: true })
-    return () => window.removeEventListener('scroll', handler)
-  }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-cream/95 backdrop-blur-md border-b border-ink/8 shadow-[0_1px_0_rgba(26,26,26,0.06)]'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between h-[64px] md:h-[76px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+      {/* ═══════════════════════════════════════════════
+          STATIC HEADER — no fixed / sticky / z pinning
+      ══════════════════════════════════════════════════ */}
+      <header className="w-full bg-white">
+        <div
+          className="max-w-[1600px] mx-auto px-6 lg:px-16 flex items-center justify-between"
+          style={{ paddingTop: '10px', paddingBottom: '10px' }}
+        >
+          {/* ── Logo ── */}
+          <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
-              src="/images/hero-bg.png"
+              src="/images/logo.png"
               alt="Best Good Friend Training"
-              width={120}
-              height={120}
-              className="h-[48px] md:h-[56px] w-auto object-contain"
+              width={267}
+              height={88}
+              priority
+              className="w-auto object-contain"
+              style={{ height: '88px' }}
             />
           </Link>
 
-          {/* Desktop nav links — hidden for now */}
+          {/* ── Desktop nav (≥1024px) ── */}
+          <nav className="hidden lg:flex items-center" style={{ gap: '56px' }}>
 
-          {/* Desktop CTA */}
-          <a
-            href={HONEYBOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 border border-brass text-brass font-sans text-[13px] tracking-[0.06em] hover:bg-brass hover:text-ink transition-all duration-250"
-          >
-            Book Discovery Call
-          </a>
-
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 -mr-2 flex flex-col gap-[5px]"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-          >
-            <span
-              className={`block w-[22px] h-[1.5px] bg-ink transition-all duration-300 origin-center ${
-                menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''
-              }`}
-            />
-            <span
-              className={`block w-[22px] h-[1.5px] bg-ink transition-all duration-300 ${
-                menuOpen ? 'opacity-0 scale-x-0' : ''
-              }`}
-            />
-            <span
-              className={`block w-[22px] h-[1.5px] bg-ink transition-all duration-300 origin-center ${
-                menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''
-              }`}
-            />
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile drawer */}
-      <div
-        className={`md:hidden fixed inset-0 z-40 transition-all duration-400 ${
-          menuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-        }`}
-      >
-        {/* Backdrop */}
-        <div
-          className={`absolute inset-0 bg-ink/40 transition-opacity duration-300 ${
-            menuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
-          onClick={() => setMenuOpen(false)}
-        />
-        {/* Drawer */}
-        <div
-          className={`absolute top-0 right-0 bottom-0 w-[80vw] max-w-[340px] bg-cream flex flex-col transition-transform duration-400 ease-expo-out ${
-            menuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="flex items-center justify-between px-6 h-[64px] border-b border-ink/10">
-            <span className="font-display text-[11px] uppercase tracking-[0.18em] text-ink/50">
-              Menu
-            </span>
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="p-2 -mr-2"
-              aria-label="Close menu"
-            >
-              <span className="block w-5 h-[1.5px] bg-ink rotate-45 translate-y-[0.75px]" />
-              <span className="block w-5 h-[1.5px] bg-ink -rotate-45 -translate-y-[0.75px]" />
-            </button>
-          </div>
-
-          <nav className="flex-1 px-6 pt-10 flex flex-col gap-7">
-            {navLinks.map(({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className="font-display text-[22px] text-ink hover:text-brass transition-colors duration-200"
+            {/* SERVICES with hover dropdown */}
+            <div className="relative group">
+              <Link
+                href="#services"
+                className="flex items-center gap-2 font-sans uppercase transition-opacity duration-200 hover:opacity-50"
+                style={NAV_STYLE}
               >
-                {label}
-              </a>
-            ))}
-          </nav>
+                SERVICES
+                {/* Caret */}
+                <svg width="11" height="7" viewBox="0 0 11 7" fill="none" className="opacity-70 mt-[1px]">
+                  <path d="M1 1l4.5 4.5L10 1" stroke={SAGE} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
 
-          <div className="px-6 pb-10">
-            <a
+              {/* Dropdown panel */}
+              <div
+                className="absolute top-full left-0 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200"
+                style={{ zIndex: 100 }}
+              >
+                <div className="bg-white border border-black/8 shadow-sm py-3 min-w-[220px]">
+                  {serviceDropdown.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block px-6 py-3 font-sans uppercase hover:opacity-50 transition-opacity duration-150"
+                      style={{ ...NAV_STYLE, fontSize: '12px', letterSpacing: '0.13em' }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="#about"
+              className="font-sans uppercase transition-opacity duration-200 hover:opacity-50"
+              style={NAV_STYLE}
+            >
+              MY STORY
+            </Link>
+
+            <Link
+              href="#reset-course"
+              className="font-sans uppercase transition-opacity duration-200 hover:opacity-50"
+              style={NAV_STYLE}
+            >
+              RESET COURSE
+            </Link>
+
+            {/* CTA — outlined, no fill, sharp corners */}
+            <Link
               href={HONEYBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center py-4 bg-brass text-ink font-sans text-[13px] tracking-[0.08em] uppercase"
+              className="font-sans uppercase transition-all duration-200"
+              style={{
+                ...NAV_STYLE,
+                border: `1.5px solid ${SAGE}`,
+                padding: '14px 18px',
+                backgroundColor: 'transparent',
+                display: 'inline-block',
+                lineHeight: 1,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = SAGE
+                e.currentTarget.style.color = '#fff'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = SAGE
+              }}
             >
-              Book Discovery Call
-            </a>
-            <a
-              href="tel:+18607901078"
-              className="block text-center mt-4 font-sans text-[13px] text-stone hover:text-ink transition-colors"
-            >
-              860-790-1078
-            </a>
-          </div>
+              BOOK DISCOVERY CALL
+            </Link>
+          </nav>
+
+          {/* ── Mobile hamburger (< 1024px) ── */}
+          <button
+            className="lg:hidden flex flex-col justify-center gap-[8px] p-2"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle navigation"
+            style={{ width: '48px', height: '48px' }}
+          >
+            <span
+              className={`block h-[2px] transition-all duration-300 origin-center ${mobileOpen ? 'rotate-45 translate-y-[10px]' : ''}`}
+              style={{ width: '36px', backgroundColor: SAGE }}
+            />
+            <span
+              className={`block h-[2px] transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}
+              style={{ width: '36px', backgroundColor: SAGE }}
+            />
+            <span
+              className={`block h-[2px] transition-all duration-300 origin-center ${mobileOpen ? '-rotate-45 -translate-y-[10px]' : ''}`}
+              style={{ width: '36px', backgroundColor: SAGE }}
+            />
+          </button>
         </div>
+      </header>
+
+      {/* ═══════════════════════════════════════════
+          MOBILE FULL-SCREEN OVERLAY
+      ════════════════════════════════════════════ */}
+      <div
+        className={`lg:hidden fixed inset-0 bg-white flex flex-col items-center justify-center transition-all duration-400 ${
+          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        style={{ zIndex: 200 }}
+      >
+        {/* Close × */}
+        <button
+          onClick={() => setMobileOpen(false)}
+          className="absolute top-8 right-8 p-2"
+          aria-label="Close menu"
+        >
+          <span className="block w-[36px] h-[2px] rotate-45 translate-y-[1px]" style={{ backgroundColor: SAGE }} />
+          <span className="block w-[36px] h-[2px] -rotate-45 -translate-y-[1px]" style={{ backgroundColor: SAGE }} />
+        </button>
+
+        <nav className="flex flex-col items-center gap-10">
+          {[
+            { label: 'SERVICES',      href: '#services' },
+            { label: 'MY STORY',      href: '#about' },
+            { label: 'RESET COURSE',  href: '#reset-course' },
+          ].map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="font-sans uppercase transition-opacity duration-200 hover:opacity-50"
+              style={{ ...NAV_STYLE, fontSize: '22px' }}
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          <Link
+            href={HONEYBOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans uppercase mt-4 transition-all duration-200 hover:opacity-70"
+            style={{
+              ...NAV_STYLE,
+              fontSize: '18px',
+              border: `1.5px solid ${SAGE}`,
+              padding: '18px 28px',
+              display: 'inline-block',
+              lineHeight: 1,
+            }}
+            onClick={() => setMobileOpen(false)}
+          >
+            BOOK DISCOVERY CALL
+          </Link>
+        </nav>
       </div>
     </>
   )
