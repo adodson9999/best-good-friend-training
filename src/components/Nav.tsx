@@ -32,13 +32,22 @@ export default function Nav() {
       {/* ═══════════════════════════════════════════════
           STATIC HEADER — no fixed / sticky / z pinning
       ══════════════════════════════════════════════════ */}
-      <header className="w-full bg-white">
+      {/* SVG filter — removes white pixels from the logo PNG */}
+      <svg width="0" height="0" aria-hidden style={{ position: 'absolute' }}>
+        <defs>
+          <filter id="remove-white-bg">
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 2 0" />
+          </filter>
+        </defs>
+      </svg>
+
+      <header className="w-full bg-white relative" style={{ zIndex: 50, overflow: 'visible' }}>
         <div
-          className="max-w-[1600px] mx-auto px-6 lg:px-16 flex items-center justify-between"
-          style={{ paddingTop: 'clamp(6px, 1vw, 10px)', paddingBottom: 'clamp(6px, 1vw, 10px)' }}
+          className="max-w-[1600px] mx-auto px-6 lg:px-16 flex items-start justify-between"
+          style={{ height: 'clamp(60px, 10vw, 108px)', overflow: 'visible' }}
         >
           {/* ── Logo ── */}
-          <Link href="/" className="flex-shrink-0 flex items-center">
+          <Link href="/" className="flex-shrink-0 flex items-start" style={{ overflow: 'visible' }}>
             <Image
               src="/images/logo.png"
               alt="Best Good Friend Training"
@@ -46,7 +55,7 @@ export default function Nav() {
               height={88}
               priority
               className="w-auto object-contain"
-              style={{ height: 'clamp(48px, 8vw, 88px)' }}
+              style={{ height: 'clamp(96px, 16vw, 176px)', filter: 'url(#remove-white-bg)', position: 'relative', zIndex: 51 }}
             />
           </Link>
 
