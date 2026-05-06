@@ -44,7 +44,7 @@ const REVIEWS = [
 
 function Stars() {
   return (
-    <div className="flex gap-[3px] mb-2">
+    <div className="flex gap-[3px]" style={{ marginBottom: 'clamp(2px, 0.5dvh, 8px)' }}>
       {[...Array(5)].map((_, i) => (
         <svg key={i} width="13" height="13" viewBox="0 0 14 14" fill="none">
           <path d="M7 1l1.545 3.13 3.455.502-2.5 2.438.59 3.44L7 8.885 3.91 10.51l.59-3.44L2 4.632l3.455-.502L7 1z" fill={GOLD} />
@@ -72,22 +72,22 @@ function HeroReviews() {
   const r = REVIEWS[active]
 
   return (
-    <div className="mt-5 md:mt-6 pt-4 md:pt-5" style={{ borderTop: '1px solid rgba(255,255,255,0.18)' }}>
+    <div style={{ marginTop: 'clamp(6px, 1.8dvh, 24px)', paddingTop: 'clamp(6px, 1.8dvh, 20px)', borderTop: '1px solid rgba(255,255,255,0.18)' }}>
       <Stars />
       <blockquote
-        className="font-display italic text-white leading-[1.4] mb-2 transition-opacity duration-250"
-        style={{ fontSize: 'clamp(12px,1.05vw,15px)', maxWidth: '46ch', opacity: fading ? 0 : 1 }}
+        className="font-display italic text-white leading-[1.35] transition-opacity duration-250"
+        style={{ fontSize: 'clamp(11px,1.05vw,15px)', maxWidth: '46ch', opacity: fading ? 0 : 1, marginBottom: 'clamp(2px, 0.6dvh, 8px)' }}
       >
         &ldquo;{r.quote}&rdquo;
       </blockquote>
       <p
-        className="font-sans uppercase tracking-[0.16em] mb-3 transition-opacity duration-250"
-        style={{ fontSize: '10px', color: GOLD, opacity: fading ? 0 : 1 }}
+        className="font-sans uppercase tracking-[0.16em] transition-opacity duration-250"
+        style={{ fontSize: '10px', color: GOLD, opacity: fading ? 0 : 1, marginBottom: 'clamp(2px, 0.6dvh, 12px)' }}
       >
         {r.name}
       </p>
-      {/* Dot nav */}
-      <div className="flex items-center gap-2">
+      {/* Dot nav — hidden on small screens to save space */}
+      <div className="hidden sm:flex items-center gap-2">
         {REVIEWS.map((_, i) => (
           <button
             key={i}
@@ -116,15 +116,15 @@ export default function Hero() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: '#486573', backgroundImage: TEXTURE_URI }}
     >
-      <div className="flex flex-col" style={{ height: 'calc(100vh - 108px)', minHeight: '480px' }}>
+      <div className="flex flex-col" style={{ height: 'calc(100dvh - clamp(48px, 8vw, 88px) - clamp(12px, 2vw, 20px))', minHeight: '360px' }}>
 
-        <div className="flex flex-col md:flex-row flex-1 min-h-0">
+        {/* Always side-by-side so portrait + copy are both visible on every screen */}
+        <div className="flex flex-row flex-1 min-h-0">
 
           {/* ══════════════ LEFT — PORTRAIT ══════════════ */}
           <div
-            className="flex-shrink-0 w-full md:w-[47%]"
+            className="flex-shrink-0 w-[38%] md:w-[47%]"
             style={{
-              minHeight: '260px',
               backgroundImage: 'url(/images/genna-hero-portrait.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center top',
@@ -134,26 +134,30 @@ export default function Hero() {
           </div>
 
           {/* ══════════════ RIGHT — COPY ══════════════ */}
-          <div className="relative z-10 flex-1 flex flex-col justify-center px-7 pt-6 pb-4 md:px-14 lg:px-20 xl:px-24 md:pt-8 md:pb-6">
+          <div className="relative z-10 flex-1 flex flex-col justify-start overflow-hidden px-3 pb-2 sm:px-7 sm:pb-4 md:px-14 lg:px-20 xl:px-24 md:pb-6">
+
+            {/* Top spacer — shares empty space with bottom spacer to center content.
+                min-h-0 lets it collapse to zero on short viewports so headline stays visible. */}
+            <div className="flex-1 min-h-0" />
 
             {/* Headline */}
             <h1
-              className="font-sans font-black text-white leading-[1.05] mb-4 md:mb-5"
-              style={{ fontSize: 'clamp(30px,3.7vw,59px)', maxWidth: '18ch', letterSpacing: '-0.025em' }}
+              className="font-sans font-black text-white leading-[1.05]"
+              style={{ fontSize: 'clamp(16px, min(3.7vw, 5dvh), 59px)', maxWidth: '26ch', letterSpacing: '-0.025em', marginBottom: 'clamp(4px, 1.5dvh, 20px)' }}
             >
               Professional Dog Training in Charlotte, NC Area
             </h1>
 
             {/* Subhead */}
             <p
-              className="font-display italic text-white/90 mb-4 md:mb-5"
-              style={{ fontSize: 'clamp(13px,1.1vw,17px)', maxWidth: '46ch', lineHeight: '1.6' }}
+              className="font-display italic text-white/90"
+              style={{ fontSize: 'clamp(11px,1.1vw,17px)', maxWidth: '46ch', lineHeight: '1.6', marginBottom: 'clamp(4px, 1.5dvh, 20px)' }}
             >
               Build the dog you&apos;ve always wanted through real communication, not just commands.
             </p>
 
             {/* Credential bullets */}
-            <ul className="space-y-[6px]">
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2px, 0.5dvh, 6px)' }}>
               {[
                 'Certified Canine Coach with 10+ Years of Experience',
                 'Private 1-on-1 In-Home Coaching (Plus Virtual Support)',
@@ -161,9 +165,9 @@ export default function Hero() {
                 'Different Training for Every Dog',
                 'Serving Charlotte, Matthews, Huntersville, Davidson, Concord, NC & Surrounding Areas',
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
+                <li key={item} className="flex items-start gap-2">
                   <span style={{ color: SAGE, fontSize: '9px', marginTop: '4px', flexShrink: 0 }}>✦</span>
-                  <span className="font-sans text-white/85" style={{ fontSize: 'clamp(11px,0.9vw,13px)', lineHeight: '1.5' }}>
+                  <span className="font-sans text-white/85" style={{ fontSize: 'clamp(11px,0.9vw,13px)', lineHeight: '1.4' }}>
                     {item}
                   </span>
                 </li>
@@ -172,19 +176,22 @@ export default function Hero() {
 
             {/* Inline review slideshow */}
             <HeroReviews />
+
+            {/* Bottom spacer — mirrors top spacer */}
+            <div className="flex-1 min-h-0" />
           </div>
         </div>
 
         {/* ══════════════ BOTTOM SERVICE BAR ══════════════ */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-4" style={{ backgroundColor: '#1C1A17', minHeight: '56px' }}>
+        <div className="w-full grid grid-cols-4" style={{ backgroundColor: '#1C1A17', minHeight: '44px', flexShrink: 0 }}>
           {SERVICE_BAR.map((s, i) => (
             <Link
               key={s.label}
               href={s.href}
-              className="flex items-center justify-center px-4 py-3 md:py-4 text-center transition-colors duration-200 hover:bg-white/5"
+              className="flex items-center justify-center overflow-hidden px-1 py-2 md:px-4 md:py-4 text-center transition-colors duration-200 hover:bg-white/5"
               style={{ borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
             >
-              <span className="font-display italic text-white/80" style={{ fontSize: 'clamp(12px,1vw,16px)' }}>
+              <span className="font-display italic text-white/80 whitespace-nowrap" style={{ fontSize: 'clamp(9px,1vw,16px)' }}>
                 {s.label}
               </span>
             </Link>

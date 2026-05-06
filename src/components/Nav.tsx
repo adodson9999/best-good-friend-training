@@ -35,7 +35,7 @@ export default function Nav() {
       <header className="w-full bg-white">
         <div
           className="max-w-[1600px] mx-auto px-6 lg:px-16 flex items-center justify-between"
-          style={{ paddingTop: '10px', paddingBottom: '10px' }}
+          style={{ paddingTop: 'clamp(6px, 1vw, 10px)', paddingBottom: 'clamp(6px, 1vw, 10px)' }}
         >
           {/* ── Logo ── */}
           <Link href="/" className="flex-shrink-0 flex items-center">
@@ -46,73 +46,69 @@ export default function Nav() {
               height={88}
               priority
               className="w-auto object-contain"
-              style={{ height: '88px' }}
+              style={{ height: 'clamp(48px, 8vw, 88px)' }}
             />
           </Link>
 
-          {/* ── Desktop nav (≥1024px) ── */}
-          <nav className="hidden lg:flex items-center" style={{ gap: '56px' }}>
+          {/* ── Right side: nav links (desktop) + CTA (always) + hamburger (mobile) ── */}
+          <div className="flex items-center" style={{ gap: 'clamp(10px, 2vw, 32px)' }}>
 
-            {/* SERVICES with hover dropdown */}
-            <div className="relative group">
-              <Link
-                href="#services"
-                className="flex items-center gap-2 font-sans uppercase transition-opacity duration-200 hover:opacity-50"
-                style={NAV_STYLE}
-              >
-                SERVICES
-                {/* Caret */}
-                <svg width="11" height="7" viewBox="0 0 11 7" fill="none" className="opacity-70 mt-[1px]">
-                  <path d="M1 1l4.5 4.5L10 1" stroke={SAGE} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
+            {/* Nav links — desktop only */}
+            <nav className="hidden lg:flex items-center" style={{ gap: 'clamp(24px, 3vw, 56px)' }}>
 
-              {/* Dropdown panel */}
-              <div
-                className="absolute top-full left-0 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200"
-                style={{ zIndex: 100 }}
-              >
-                <div className="bg-white border border-black/8 shadow-sm py-3 min-w-[220px]">
-                  {serviceDropdown.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="block px-6 py-3 font-sans uppercase hover:opacity-50 transition-opacity duration-150"
-                      style={{ ...NAV_STYLE, fontSize: '12px', letterSpacing: '0.13em' }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+              {/* SERVICES with hover dropdown */}
+              <div className="relative group">
+                <Link
+                  href="#services"
+                  className="flex items-center gap-2 font-sans uppercase transition-opacity duration-200 hover:opacity-50"
+                  style={NAV_STYLE}
+                >
+                  SERVICES
+                  <svg width="11" height="7" viewBox="0 0 11 7" fill="none" className="opacity-70 mt-[1px]">
+                    <path d="M1 1l4.5 4.5L10 1" stroke={SAGE} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+                <div
+                  className="absolute top-full left-0 pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200"
+                  style={{ zIndex: 100 }}
+                >
+                  <div className="bg-white border border-black/8 shadow-sm py-3 min-w-[220px]">
+                    {serviceDropdown.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block px-6 py-3 font-sans uppercase hover:opacity-50 transition-opacity duration-150"
+                        style={{ ...NAV_STYLE, fontSize: '12px', letterSpacing: '0.13em' }}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <Link
-              href="#about"
-              className="font-sans uppercase transition-opacity duration-200 hover:opacity-50"
-              style={NAV_STYLE}
-            >
-              MY STORY
-            </Link>
+              <Link href="#about" className="font-sans uppercase transition-opacity duration-200 hover:opacity-50" style={NAV_STYLE}>
+                MY STORY
+              </Link>
 
-            <Link
-              href="#reset-course"
-              className="font-sans uppercase transition-opacity duration-200 hover:opacity-50"
-              style={NAV_STYLE}
-            >
-              RESET COURSE
-            </Link>
+              <Link href="#reset-course" className="font-sans uppercase transition-opacity duration-200 hover:opacity-50" style={NAV_STYLE}>
+                RESET COURSE
+              </Link>
+            </nav>
 
-            {/* CTA — outlined, no fill, sharp corners */}
+            {/* CTA — always visible, scales with viewport */}
             <Link
               href={HONEYBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans uppercase transition-all duration-200"
+              className="font-sans uppercase transition-all duration-200 whitespace-nowrap flex-shrink-0"
               style={{
-                ...NAV_STYLE,
+                color: SAGE,
+                fontWeight: 400,
+                letterSpacing: '0.15em',
+                fontSize: 'clamp(8px, 0.85vw, 11px)',
                 border: `1.5px solid ${SAGE}`,
-                padding: '14px 18px',
+                padding: 'clamp(7px, 0.9vw, 14px) clamp(9px, 1.2vw, 18px)',
                 backgroundColor: 'transparent',
                 display: 'inline-block',
                 lineHeight: 1,
@@ -128,28 +124,18 @@ export default function Nav() {
             >
               BOOK DISCOVERY CALL
             </Link>
-          </nav>
 
-          {/* ── Mobile hamburger (< 1024px) ── */}
-          <button
-            className="lg:hidden flex flex-col justify-center gap-[8px] p-2"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Toggle navigation"
-            style={{ width: '48px', height: '48px' }}
-          >
-            <span
-              className={`block h-[2px] transition-all duration-300 origin-center ${mobileOpen ? 'rotate-45 translate-y-[10px]' : ''}`}
-              style={{ width: '36px', backgroundColor: SAGE }}
-            />
-            <span
-              className={`block h-[2px] transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}
-              style={{ width: '36px', backgroundColor: SAGE }}
-            />
-            <span
-              className={`block h-[2px] transition-all duration-300 origin-center ${mobileOpen ? '-rotate-45 -translate-y-[10px]' : ''}`}
-              style={{ width: '36px', backgroundColor: SAGE }}
-            />
-          </button>
+            {/* Hamburger — mobile only */}
+            <button
+              className="lg:hidden flex flex-col justify-center gap-[6px] p-1 flex-shrink-0"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label="Toggle navigation"
+            >
+              <span className={`block h-[2px] transition-all duration-300 origin-center ${mobileOpen ? 'rotate-45 translate-y-[8px]' : ''}`} style={{ width: 'clamp(24px, 3vw, 36px)', backgroundColor: SAGE }} />
+              <span className={`block h-[2px] transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} style={{ width: 'clamp(24px, 3vw, 36px)', backgroundColor: SAGE }} />
+              <span className={`block h-[2px] transition-all duration-300 origin-center ${mobileOpen ? '-rotate-45 -translate-y-[8px]' : ''}`} style={{ width: 'clamp(24px, 3vw, 36px)', backgroundColor: SAGE }} />
+            </button>
+          </div>
         </div>
       </header>
 
